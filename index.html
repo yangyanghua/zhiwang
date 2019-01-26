@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>织网</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	</head>
+	<body>
+		<section class="main-content">
+			<header class="main-herder" >
+				<div class="left-title">
+				</div>
+				<nav class="nav-right">
+					<ul class="nav-list">
+						<li class="nav-item">首页 <div class="line"></div>  </li>
+						<li class="nav-item">服务 <div class="line"></div> </li>
+						<li class="nav-item">入驻 <div class="line"></div> </li>
+						<li class="nav-item">最新动态 <div class="line"></div> </li>
+						<li class="nav-item">关于 <div class="line"></div> </li>
+					</ul>
+				</nav>
+				
+			</header>
+			
+			<div class="banner">
+				
+				<h2 class="banner-txt">工  厂  赋  云  ·  触  手  可  及</h2>
+				<h1 class="banner-title">为您提供专业的服装生产服务</h1>
+				
+			</div>
+			
+			<div class="content">
+				
+				<div class="content-box">
+					<h2 class="title">织网是什么？</h2>
+					<p class="instructions">织网是通过信息化技术和互联网的方式优化整合大量包括自有工厂在内的生产工厂，并藉由智能匹配算法为您提供最佳生产服务的线上生产平台。</p>
+					
+					<ul class="instructionsList">
+						<li class="instructionsItem">
+							<button class="b-btn">快速打版</button>
+							<p class="txt-info">三天出样</p>
+							<p class="txt-info">包工包料</p>
+						</li>
+						
+						<li class="instructionsItem">
+							<button class="b-btn">低价量产</button>
+							<p class="txt-info">40件起接</p>
+							<p class="txt-info">全息生产</p>
+							<p class="txt-info">工厂工价</p>
+						</li>
+						
+						<li class="instructionsItem">
+							<button class="b-btn">一件起批</button>
+							<p class="txt-info">按出厂价</p>
+							<p class="txt-info">快速物流</p>
+						</li>
+						
+						<li class="instructionsItem">
+							<button class="b-btn">服装设计</button>
+							<p class="txt-info">强大设计团</p>
+							<p class="txt-info">内部竞选模式</p>
+						</li>						
+					</ul>
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</section>	
+		<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+
+				$(window).scroll(function(){
+				// 滚动条距离顶部的距离 大于 200px时
+				let top  = $(window).scrollTop()
+				if( top <= 220){
+					
+					$(".main-herder").css({'background':'none'});
+				
+				} else if(top > 220)  {
+				
+					$(".main-herder").css({'backgroundImage': 'linear-gradient(130deg, #3B3BEB 0%, rgba(59,59,235,0.55) 100%)','backgroundColor':'#fff'});
+				
+				}
+				});
+
+			
+			
+			
+		</script>
+	</body>
+</html>
