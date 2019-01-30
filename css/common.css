@@ -1,7 +1,9 @@
 .main-content{
-	height: auto;
 	width: 100%;
+	height: 100%;
+	overflow: hidden;
 	background: #fff;
+	padding-bottom: 400px;
 }
 .main-herder{
 	position: fixed;
@@ -12,7 +14,7 @@
 	padding: 0 68px;
 	display: flex;
 	background: none;
-	
+	z-index: 2000;
 }
 .main-herder .left-title{
 	flex: 3;
