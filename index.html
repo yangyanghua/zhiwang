@@ -6,6 +6,7 @@
 		<title>织网</title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
 		<link rel="stylesheet" type="text/css" href="css/index.css"/>
 	</head>
 	<body>
@@ -26,10 +27,9 @@
 			</header>
 			
 			<div class="banner">
-				
-				<h2 class="banner-txt">工  厂  赋  云  ·  触  手  可  及</h2>
+
 				<h1 class="banner-title">为您提供专业的服装生产服务</h1>
-				
+				<h2 class="banner-txt">工  厂  赋  云  ·  触  手  可  及</h2>
 			</div>
 			
 			<div class="content">
@@ -295,19 +295,168 @@
 				
 			</div>
 			
+						
+			<div class="map-content" >
+				<h2 class="title-center">
+					工厂网络
+				</h2>
+				<ul class="num-list">
+					<li class="num">4</li>
+					<li class="num">7</li>
+					<li class="num">4</li>
+					<li class="num">0</li>
+				</ul>
+				<div id="container" style="height: 500px;color: #fff;"></div>
+
+				<div class="swiper-container">
+				  <div class="swiper-wrapper">
+				    <div class="swiper-slide">
+							<p class="city-name">中国</p>
+							<p class="total">2764</p>				    	
+				    </div>
+				    <div class="swiper-slide">
+							<p class="city-name">韩国</p>
+							<p class="total">706</p>				    	
+				    </div>
+				    <div class="swiper-slide">
+							<p class="city-name">美国</p>
+							<p class="total">420</p>				    	
+				    </div>
+				    <div class="swiper-slide">
+							<p class="city-name">日本</p>
+							<p class="total">99</p>			    	
+				    </div>				    
+				    <div class="swiper-slide">
+							<p class="city-name">德国</p>
+							<p class="total">98</p>		    	
+				    </div>						    
+				    <div class="swiper-slide">
+							<p class="city-name">新加坡</p>
+							<p class="total">79</p>	    	
+				    </div>					    
+				  </div>
+				    <div class="swiper-button-prev swiper-button-black"></div>
+				    <div class="swiper-button-next swiper-button-black"></div>				  
+				  
+				  
+				</div>
+
+
+				
+			</div>			
 			
 			
+			<div class="footer">
+				
+				<div class="contact">
+					<p class="info">联系电话：02031214727</p>
+					<p class="info">邮箱：cyfuer@163.com</p>
+					<p class="info">地址：广州白云区太和镇</p>
+				</div>
+				
+				<ul class="link-list">
+					<li class="link-item" >
+						<img src="img/index/contact_qq.png"/>
+					</li>					
+					<li class="link-item" >
+						<img src="img/index/contact_wechat.png"/>
+					</li>
+					<li class="link-item" >
+						<img src="img/index/contact_weibo.png"/>
+					</li>								
+				</ul>
+				
+
+			</div>
 			
 			
-			
-			
-			
-			
+
 			
 		</section>	
-		<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		   <script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+	       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+	       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+	       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+	       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+	       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+	       <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=Gkp2kjITvhmTA0VYLa11Dvli9uRwwN6R"></script>
+	       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+	       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+	       <script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+
 		<script type="text/javascript">
 				$(function(){
+					
+				var dom = document.getElementById("container");
+				var myChart = echarts.init(dom);
+				var app = {};
+				option = null;
+				
+				var dataCount = 0;
+				var CHUNK_COUNT = 230;
+				
+				option = {
+				    backgroundColor: '#fff',
+				    title: {
+				        text: '10000000 GPS Points',
+				            left: 'center',
+				        textStyle: {
+				            color: '#fff'
+				        }
+				    },
+				    geo: {
+				        map: 'world',
+				        roam: true,
+				        label: {
+				            emphasis: {
+				                show: false
+				            }
+				        },
+				        silent: true,
+				        itemStyle: {
+				            normal: {
+				                areaColor: '#e9f0f6',
+				                borderColor: '#dee6ec'
+				            },
+				            emphasis: {
+				                areaColor: '#2a333d'
+				            }
+				        }
+				    },
+				    series: [{
+				        name: '弱',
+				        type: 'scatterGL',
+				        progressive: 1e6,
+				        coordinateSystem: 'geo',
+				        symbolSize: 1,
+				        zoomScale: 0.002,
+				        blendMode: 'lighter',
+				        large: true,
+				        itemStyle: {
+				            color: 'rgb(20, 15, 2)'
+				        },
+				        postEffect: {
+				            enable: true
+				        },
+				        silent: true,
+				        dimensions: ['lng', 'lat'],
+				        data: new Float32Array()
+				    }]
+				};
+					var mySwiper = new Swiper('.swiper-container', {
+						autoplay: false,//可选选项，自动滑动
+						slidesPerView : 6,
+						navigation: {
+						    nextEl: '.swiper-button-next',
+						    prevEl: '.swiper-button-prev',
+						  },						
+					})				
+				
+					if (option && typeof option === "object") {
+					    myChart.setOption(option, true);
+					}					
+					
 					var top  = $(window).scrollTop()
 	
 					if( top <= 220){
